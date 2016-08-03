@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>e-Institute</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+	<!-- Font Awesome -->
+	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	
+    <!-- Animation -->
+	<link href="css/animate.css" rel="stylesheet" />
+	
+    <!-- MyTemplate CSS -->
+    <link href="css/style.css" rel="stylesheet">
+	<script src="js/validate.js"></script>
+	
+	<style>
+	textarea{
+			visibility:hidden;
+			}
+</style>
+	<script>
+	function addRow(tableID) {
+ 
+            var table = document.getElementById(tableID);
+ 
+            var rowCount = table.rows.length;
+            var row = table.insertRow(rowCount);
+ 
+            var colCount = table.rows[0].cells.length;
+ 
+            for(var i=0; i<colCount; i++) {
+ 
+                var newcell = row.insertCell(i);
+ 
+                newcell.innerHTML = table.rows[0].cells[i].innerHTML;
+                //alert(newcell.childNodes);
+                switch(newcell.childNodes[0].type) {
+                    case "text":
+                            newcell.childNodes[0].value = "";
+                            break;
+                    case "checkbox":
+                            newcell.childNodes[0].checked = false;
+                            break;
+                    case "select-one":
+                            newcell.childNodes[0].selectedIndex = 0;
+                            break;
+                }
+            }
+        }
+ 
+        function deleteRow(tableID) {
+            try {
+            var table = document.getElementById(tableID);
+            var rowCount = table.rows.length;
+ 
+            for(var i=0; i<rowCount; i++) {
+                var row = table.rows[i];
+                var chkbox = row.cells[0].childNodes[0];
+                if(null != chkbox && true == chkbox.checked) {
+                    if(rowCount <= 1) {
+                        alert("Cannot delete all the rows.");
+                        break;
+                    }
+                    table.deleteRow(i);
+                    rowCount--;
+                    i--;
+                }
+ 
+ 
+            }
+            }catch(e) {
+                alert(e);
+            }
+        }
+		</script>
+</head>
+
+<body>
+
+	<header id="header-banner">
+		<nav class="navbar navbar-default navbar-fixed-top fadeIn" role="navigation">
+			<div class="container">
+				
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#dropdown-box-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<div class="navbar-brand">
+						<a href="#">e-Institute</a>
+					</div>
+				</div>
+				
+				<!-- Collect the nav links and other content for toggling -->
+				<div class="collapse navbar-collapse navbar-right" id="dropdown-box-1">
+					
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="#home">HOME</a></li>
+						<li><a href="#aboutus">ABOUT</a></li>
+						<li><a href="#admin">ADMIN</a></li>
+						<li><a href="#existinguser">EXISTING USERS</a></li>
+						<li class="dropdown" role="presentation">							
+							<a href="#register" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+							  REGISTER
+							</a>
+							<!--
+							<ul class="dropdown-menu bullet fadeIn" role="menu">
+							  <li><a href="#first">FACULTY</a></li>
+							  <li><a href="#second">STUDENT</a></li>
+							  <li><a href="#third">PARENT</a></li>
+							</ul>
+							-->
+						</li>
+						<!--<li><a href="#alumni">ALUMNI</a></li>-->
+						<li><a href="#contactus">CONTACT</a></li>
+					</ul>
+					
+				</div>
+				
+			</div> <!-- /.container -->
+		</nav> <!-- /.nav -->
+	</header>
+		
+	<!-- banner -->
+    <section class="banner" id="home">
+		<div class="container" >
+			<div class="slogan">
+				<h2>Welcome to e-Institute</h2>
+				<h4>Scroll down for more details</h4>
+			</div>
+			
+			<!--<div class="btn-circle-scroll fadeIn">
+				<a href="#section-footer" class="btn-circle">
+					<i class="fa fa-angle-double-down animated"></i>
+				</a>
+			</div>-->
+			
+		</div>
+    </section>
+	<!-- /.banner -->
+
+	<!-- aboutus -->
+    <section class="aboutus" id="aboutus">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div class="wow bounceInLeft" data-wow-delay="0.1s"> 
+						<h2>About Us</h2> 
+					</div>
+					<div class="col-sm-7">
+						<p align="justify">
+							Indian Institute of Remote Sensing (IIRS) under Indian Space Research Organisation, Department of Space, Govt. of India is a premier Training and Educational Institute set up for developing trained professionals in the field of Remote Sensing, Geoinformatics and GPS Technology for Natural Resources, Environmental and Disaster Management.							
+						</p>
+						<p align="justify">
+							IIRS provides support to conduct all its remote sensing and GIS training & education programmes at postgraduate level. The headquarters of Indian Society of Remote Sensing (ISRS), the largest non-governmental scientific society in the country, is also located in the Institute campus.
+						</p>						
+					</div>
+					<div class="col-sm-5">
+						<div class="img-iirs">
+							<div class="wow fadeIn" data-wow-delay="0.2s">
+								<img src="img/iirs.jpg" alt="No Thumbnail Available!" class="img-responsive img-rounded" />
+							</div>
+						</div>
+					</div>
+				</div>				
+			</div>
+		</div>
+	</section>
+	<!-- /.aboutus -->
+	<br>
+	<br>
+	<!-- admin -->
+	<section class="admin" id="admin">
+		<div class="container">			
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<div class="col-sm-7">
+				 <BR><BR>
+						<h4>ADMIN LOGIN</h4>	
+				<form name="adminmyForm" action="./admindisplay.php" onsubmit="return adminvalidate()" method="post">			
+					<input type="email" name="adminemail" id="adminemail" required placeholder="e-Mail*"/>	
+					<input type="text" name="adminadhaar" id="adminadhaar" required placeholder="AdhaarUID*"/>
+					<button class="submit" ><span class="entypo-lock"></span></button>	
+				</form>
+				</div>
+				</div>
+			</div>
+		</div>
+</section>			
+	<br>
+	<br>
+	<!-- existing users -->
+	<section class="existinguser" id="existinguser">
+		<div class="container">			
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<div class="col-sm-7">
+				 <BR><BR>
+						<h4>EXISTING USERS</h4>	
+				<form name="existmyForm" action="./existdisplay.php" onsubmit="return existvalidate()" method="post">			
+					<input type="email" name="existemail" id="existemail" required placeholder="e-Mail*"/>	
+					<input type="text" name="existadhaar" id="existadhaar" required placeholder="AdhaarUID*"/>
+					<button class="submit" ><span class="entypo-lock"></span></button>	
+				</form>
+				</div>
+				</div>
+			</div>
+		</div>
+</section>			
+	<!-- register -->
+    <section class="register" id="register">
+		<div class="container">										
+			<div class="row-padded" id="first"></div>
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div class="col-sm-5">												
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+							  REGISTER<span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu bullet fadeIn" role="menu">
+							  <li><a href="#first">M.Tech</a></li>
+							  <li><a href="#second">M.Sc</a></li>
+							  <li><a href="#third">PG Diploma</a></li>
+							</ul>						
+					</div>
+				</div>				
+			</div>
+			
+			<div class="row-padded" id="second"></div>
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div class="col-sm-7">
+						<h4>NEW USERS</h4>	
+				<form name="myForm" action="./display.php" onsubmit="return validate()" method="post">						
+						<input type="text" name="name" id="name" required placeholder="FullName*" />
+						<input type="date" name="dob" id="dob" required placeholder="dd-mm-yyyy*"/>	
+						<input type="text" name="contaddr" id="contaddr" required placeholder="ContactNumber*"/>
+						<input type="email" name="email" id="email" required placeholder="e-Mail*"/>	
+						<input type="text" name="adhaar" id="adhaar" required placeholder="AdhaarUID*"/>						
+	
+						<INPUT type="button" value="Add Record" onclick="addRow('dataTable')" />
+						<INPUT type="button" value="Delete Record" onclick="deleteRow('dataTable')" />
+ 
+						<TABLE id="dataTable" width="350px" border="2">
+							<TR>
+								<TD><INPUT type="checkbox" name="check"/></TD>
+								<TD><INPUT type="text" name="txt"/></TD>
+								<TD><b>
+									<SELECT name="doc">
+									<option value="SSC">SSC</option>
+									<option value="HSC">HSC</option>
+									<option value="DEGREE">Degree Certificate</option>
+									<option value="BIRTH">Birth Certificate</option>
+									<option value="DRIVING">Driving License</option>
+									<option value="PAN">Pan Card</option>
+									<option value="VOTER">Voter ID</option>
+									<option value="AADHAR">Aadhar Card</option>
+									<option value="OTHERS">Supporting Certificate</option>
+									</SELECT></b>
+								</TD>
+							</TR>
+						</TABLE>
+						<!--<input type="url" id="myurl" class="myurl" placeholder="URL for Passport" required/>-->
+						
+						<button class="submit" ><span class="entypo-lock"></span></button>	
+						<textarea name="hiddenurl" id="hiddenurl"></textarea>
+						<textarea name="hiddendoctype" id="hiddendoctype"></textarea>
+						</form>						
+					</div>
+					<!--
+					<div class="col-sm-5">
+						<div class="avatar">
+							<div class="wow fadeIn" data-wow-delay="0.2s">
+							<img src="img/register/2.jpg" alt="" class="img-responsive img-rounded" />
+							</div>
+						</div>
+					</div>
+					-->
+				</div>				
+			</div>
+			
+			<div class="row-padded" id="third"></div>
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div class="col-sm-7">
+						<h4>Facilis Expedita</h4>
+						<p>
+							
+						</p>
+						<p>
+													
+						</p>
+					</div>
+					<!--
+					<div class="col-sm-5">
+						<div class="avatar">
+							<div class="wow fadeIn" data-wow-delay="0.2s">
+							<img src="img/register/3.jpg" alt="" class="img-responsive img-rounded" />
+							</div>
+						</div>
+					</div>
+					-->
+				</div>				
+			</div>
+		
+		</div>
+	</section>
+	<!-- /.register -->
+	<!-- alumni -->
+	<!--
+	<section class="alumni-banner" id="alumni"></section>
+	
+	
+	
+    <section class="alumni">
+		<div class="container">
+			
+			
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">					
+					<div class="col-sm-9">
+						<blockquote>
+							<p>
+								"Repudiandae autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae
+								Repudiandae autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae".
+							</p>
+							<footer class="blockquote-footer">
+								<strong>Mark Flix,</strong> <cite title="Source Title">Visitor B1 Visa (USA), Granted on 11 Feb 2015.</cite>
+							</footer>
+						</blockquote>
+					</div>
+					<div class="col-sm-3">
+						<div class="avatar">
+							<img src="img/alumni/tt.jpg" class="img-responsive img-rounded" />
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">					
+					<div class="col-sm-9">
+						<blockquote>
+							<p>
+								"Repudiandae autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae
+								Repudiandae autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae".
+							</p>
+							<footer class="blockquote-footer">
+								<strong>Mark Flix,</strong> <cite title="Source Title">Visitor B1 Visa (USA), Granted on 11 Feb 2015.</cite>
+							</footer>
+						</blockquote>
+					</div>
+					<div class="col-sm-3">
+						<div class="avatar">
+							<img src="img/alumni/tt.jpg" class="img-responsive img-rounded" />
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			
+		</div>
+	</section>
+	-->
+	
+	<!-- /.alumni -->
+	
+	<!-- contact us -->
+	<section class="contactus" id="contactus">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div class="wow bounceInLeft" data-wow-delay="0.1s">
+					<h2>Get in touch</h2>
+					</div>
+					<div class="col-sm-8">
+						<form class="my-form" role="form">
+						  <div class="form-group">
+							<input type="text" class="form-control" id="name" placeholder="Name">
+						  </div>
+						  <div class="form-group">
+							<input type="email" class="form-control" id="email" placeholder="Email">
+						  </div>
+						  <div class="form-group">
+							<textarea class="form-control" name="message" id="message" rows="7" cols="25" style="resize:none;" required="required" placeholder="Message"></textarea>
+						  </div>
+						  
+						  <button type="submit" class="btn btn-default btn-block">SEND MESSAGE</button>
+						</form>
+					</div>
+					
+					<div class="col-sm-4">
+						<div class="physical-address">
+						<h4>Main Office</h4>				
+						<address>
+						  <strong>Indian Institute of Remote Sensing(IIRS),</strong><br>
+							Indian Space Research Organisation,<br>
+							Dept. of Space, Govt. of India,<br>
+							4, Kalidas Road, Post Box No. 135, <br>
+							Dehradun-248001, Uttarakhand<br>
+						  <abbr title="Phone">Phone: </abbr> +91-135- 2524105, 2524106, 2524107, 2746798<br>
+						   <abbr title="Fax">Fax: </abbr> +91-135-2741987, 2748041
+						</address>
+
+						<address>
+						  <strong>Email</strong>
+						  <a href="mailto:admissions@iirs.gov.in">mail</a>
+						</address>
+
+						<address>
+						  <strong>Web</strong>
+						  	<a href="http://www.iirs.gov.in/">visit_us</a>
+						</address>						
+						
+					<br>
+						<!--
+						
+						<address>
+						  <strong>We're on social networks</strong><br>
+							<div class="wow fadeIn" data-wow-delay="0.1s">
+							<ul class="company-social">
+								<li class="social-facebook"><a href="#" target="_blank" title="facebook"><i class="fa fa-facebook"></i></a></li>
+								<li class="social-twitter"><a href="#" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></li>
+								<li class="social-dribble"><a href="#" target="_blank" title="dribble"><i class="fa fa-dribbble"></i></a></li>
+								<li class="social-google"><a href="#" target="_blank" title="google"><i class="fa fa-google-plus"></i></a></li>
+							</ul>
+							</div>
+						</address>
+
+						-->								
+						</div>
+					</div>
+				</div>				
+			</div>
+		</div>
+	</section>
+	<!-- /.contact us -->
+	
+	<!-- footer -->
+	<footer id="section-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 col-lg-12">
+					<div class="wow fadeIn" data-wow-delay="0.4s">
+						<div class="btn-circle-scroll">
+							<a href="#header-banner" class="btn-circle">
+								<i class="fa fa-angle-double-up animated"></i>
+							</a>
+						</div>
+					</div>
+					<p>&copy;&nbspCopyright 2015 - e-Institute. All rights reserved.</p>
+				</div>
+			</div>	
+		</div>
+	</footer>
+	<!-- /.footer -->
+	
+	
+	<!-- Core JavaScript Files -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.easing.min.js"></script>	
+	<script src="js/jquery.scrollTo.js"></script>
+	<script src="js/wow.min.js"></script>			<!-- Reveal animation when you scroll by wow.js. It need animate.css library -->
+	<!-- Custom Theme JavaScript -->
+	<script src="js/custom.js"></script>
+
+</body>
+
+</html>

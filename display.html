@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<title>FancyBox 1.3.4 | Demonstration</title>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+	<script>
+		!window.jQuery && document.write('<script src="jquery-1.4.3.min.js"><\/script>');
+	</script>
+	<script type="text/javascript" src="./fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+	<script type="text/javascript" src="./fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+	<link rel="stylesheet" type="text/css" href="./fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+ 	<link rel="stylesheet" href="style.css" />
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#various1").fancybox({
+				'width'				: '70%',
+				'height'			: '70%',
+				'autoScale'			: false,
+				'transitionIn'		: 'none',
+				'transitionOut'		: 'none',
+				'type'				: 'iframe'
+			});
+            
+			$("#various2").fancybox({
+				'width'				: '70%',
+				'height'			: '70%',
+				'autoScale'			: false,
+				'transitionIn'		: 'none',
+				'transitionOut'		: 'none',
+				'type'				: 'iframe'
+			}); 
+			$("#various3").fancybox({
+				'width'				: '70%',
+				'height'			: '70%',
+				'autoScale'			: false,
+				'transitionIn'		: 'none',
+				'transitionOut'		: 'none',
+				'type'				: 'iframe'
+			}); 
+		});
+	</script>
+</head>
+<body>
+<div id="content">
+<form action="./display.php" method="post">
+<b>Click the Link to see the preview of Document and Select its Type:</b><br>
+  <li><a id="various1" name="various1" href="./10.pdf">Document1</a> &nbsp;
+  <select name="doc1">
+  <option value="SSC">SSC</option>
+  <option value="HSC">HSC</option>
+  <option value="DEGREE">Degree Certificate</option>
+  <option value="BIRTH">Birth Certificate</option>
+  <option value="DRIVING">Driving License</option>
+  <option value="PAN">Pan Card</option>
+  <option value="VOTER">Voter ID</option>
+  <option value="AADHAR">Aadhar Card</option>
+  <option value="OTHERS">Supporting Certificate</option>
+  </select> &nbsp;
+  <img src="./ssc-thumb.jpg"/>
+  </li>
+  <li><a id="various2" name="various2" href="./12.pdf">Document2</a> &nbsp;
+  <select name="doc2">
+  <option value="SSC">SSC</option>
+  <option value="HSC">HSC</option>
+  <option value="DEGREE">Degree Certificate</option>
+  <option value="BIRTH">Birth Certificate</option>
+  <option value="DRIVING">Driving License</option>
+  <option value="PAN">Pan Card</option>
+  <option value="VOTER">Voter ID</option>
+  <option value="AADHAR">Aadhar Card</option>
+  <option value="OTHERS">Supporting Certificate</option>
+  </select> &nbsp;
+  <img src="./hsc-thumb.jpg"/>
+  </li>
+  <li><a id="various3" name="various3" href="./btech.jpg">Document3</a> &nbsp;
+  <select name="doc3">
+  <option value="SSC">SSC</option>
+  <option value="HSC">HSC</option>
+  <option value="DEGREE">Degree Certificate</option>
+  <option value="BIRTH">Birth Certificate</option>
+  <option value="DRIVING">Driving License</option>
+  <option value="PAN">Pan Card</option>
+  <option value="VOTER">Voter ID</option>
+  <option value="AADHAR">Aadhar Card</option>
+  <option value="OTHERS">Supporting Certificate</option>
+  </select> &nbsp;
+  <img src="./btech-thumb.jpg"/>
+  </li>
+<br><br>  &nbsp;&nbsp;&nbsp;
+<button type="submit" value="Submit">Submit</button>
+</form>
+</div>   
+</body>
+</html>

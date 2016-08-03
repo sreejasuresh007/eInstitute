@@ -1,0 +1,41 @@
+$(".user").focusin(function() {
+  $(".inputUserIcon").css("color", "#e74c3c");
+}).focusout(function() {
+  $(".inputUserIcon").css("color", "white");
+});
+
+$(".pass").focusin(function() {
+  $(".inputPassIcon").css("color", "#e74c3c");
+}).focusout(function() {
+  $(".inputPassIcon").css("color", "white");
+});
+
+function validate() {
+  var username = document.getElementById("user").value;
+  var password = document.getElementById("pass").value;
+  if(username==""){
+    document.getElementById("usermsg").innerHTML = "Enter Username!!";
+  }
+   if(password==""){
+    document.getElementById("passmsg").innerHTML = "Enter Password!!";
+  }  
+  if(username=="admin"){
+    if(password=="pwd"){
+      document.getElementById("msg").innerHTML = "Login Success!!";
+    }
+    else{
+      document.getElementById("msg").innerHTML = "Password Incorrect!!";
+    }    
+  }    
+  else{
+      document.getElementById("msg").innerHTML = "Username Incorrect!!";
+    }  		
+}
+
+function openurl(){	
+        var url = document.getElementById('myurl').value;        
+        window.location = url;
+}
+
+
+
